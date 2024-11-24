@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoTrivia: Interactive Map Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>GeoTrivia: Test Your Geography Knowledge!</h1>
+        <p>Answer the questions by clicking on the correct countries.</p>
+    </header>
+    <main>
+        <div id="question-container">
+            <p id="question">Loading question...</p>
+        </div>
+        <div id="map-container">
+            <div id="map-wrapper">
+                <object id="world-map" type="image/svg+xml" data="world-map.svg"></object>
+            </div>
+        </div>
+        <div id="score-container">
+            <p>Score: <span id="score">0</span></p>
+        </div>
+    </main>
+    <script src="app.js" defer></script>
+</body>
+</html>
