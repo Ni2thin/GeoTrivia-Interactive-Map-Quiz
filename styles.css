@@ -1,0 +1,192 @@
+/* General styles */
+body {
+    font-family: 'Nunito', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #f8f8f8;
+    min-height: 100vh;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neonGlow {
+    0% { box-shadow: 0 0 8px #00ffe7cc, 0 0 16px #00ffe7cc; }
+    50% { box-shadow: 0 0 24px #00ffe7cc, 0 0 48px #00ffe7cc; }
+    100% { box-shadow: 0 0 8px #00ffe7cc, 0 0 16px #00ffe7cc; }
+}
+
+.game-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(30, 34, 44, 0.95);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 32px 24px 24px 24px;
+    border: 2px solid #00ffe7;
+    position: relative;
+    animation: fadeIn 1s cubic-bezier(.4,0,.2,1);
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.game-title {
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 2.5rem;
+    color: #00ffe7;
+    text-shadow: 0 0 8px #00ffe7, 0 0 16px #0ff;
+    margin-bottom: 8px;
+}
+
+.game-subtitle {
+    font-size: 1.2rem;
+    color: #b2fefa;
+    margin-top: 0;
+}
+
+.game-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mode-selector-container {
+    margin-bottom: 18px;
+    background: rgba(0, 255, 231, 0.08);
+    padding: 10px 18px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #00ffe7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#mode-selector {
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 1rem;
+    background: #232526;
+    color: #00ffe7;
+    border: 2px solid #00ffe7;
+    border-radius: 8px;
+    padding: 4px 12px;
+    outline: none;
+    transition: border 0.2s;
+}
+#mode-selector:focus {
+    border: 2px solid #b2fefa;
+}
+
+.question-container {
+    background: rgba(0, 255, 231, 0.10);
+    border-radius: 12px;
+    padding: 18px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 0 8px #00ffe7;
+    font-size: 1.3rem;
+    color: #fff;
+    text-align: center;
+    min-width: 300px;
+    animation: fadeIn 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+.mode-info {
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 1.1rem;
+    color: #ffeb3b;
+    margin-bottom: 18px;
+    text-align: center;
+    text-shadow: 0 0 6px #ffeb3b99;
+}
+
+.map-container {
+    margin: 18px auto 0 auto;
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0;
+    height: auto;
+    border: 2px solid #00ffe7;
+    border-radius: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: #232526;
+    box-shadow: 0 0 16px #00ffe744;
+    position: relative;
+    animation: neonGlow 2.5s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map-wrapper {
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+#world-map {
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 8px #00ffe7cc);
+}
+
+.highlight {
+    fill: #ffeb3b !important;
+    stroke: #00ffe7 !important;
+    stroke-width: 3px;
+    filter: drop-shadow(0 0 8px #ffeb3b);
+}
+
+.score-container {
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #00ffe7;
+    margin-top: 24px;
+    background: rgba(0, 255, 231, 0.08);
+    padding: 10px 18px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #00ffe7;
+    text-align: center;
+}
+
+.map-container svg path {
+    transition: filter 0.2s, stroke 0.2s, fill 0.2s;
+    cursor: pointer;
+}
+
+.map-container svg path:hover {
+    filter: drop-shadow(0 0 8px #00ffe7) drop-shadow(0 0 16px #ffe600);
+    stroke: #00ffe7;
+    stroke-width: 2;
+    fill: #ffe600;
+}
+
+@media (max-width: 600px) {
+    .game-wrapper {
+        padding: 10px 2px;
+    }
+    .map-container {
+        max-width: 100vw;
+        min-width: 0;
+        overflow-x: auto;
+    }
+    #map-wrapper {
+        max-width: 100vw;
+    }
+    #world-map {
+        min-width: 0;
+        max-width: 100vw;
+    }
+}
